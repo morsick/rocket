@@ -19,7 +19,7 @@ class GameLayout
 	{
 		this._fApp_a = new PIXI.Application({
 			width: 1920,
-			height: 820,
+			height: 1080,
 			antialias: true,
 			transparent: false,
 			resolution: 1
@@ -51,7 +51,9 @@ class GameLayout
 		}
 		lScaleCommon_num = Math.min(lScaleX_num, lScaleY_num);
 
-		const lNewMarginLeft_num = -(lGameScreenBounds_obj.w - (lGameScreenBounds_obj.w * lScaleCommon_num)) / 2;
+		const lMarginLeftForMovingGameScreenToLeft_num = (-(lGameScreenBounds_obj.w - (lGameScreenBounds_obj.w * lScaleCommon_num)) / 2);
+		const lCentringOffsetForMarginLeft_num = (lBrowserScreenBounds_obj.w - (lGameScreenBounds_obj.w * lScaleCommon_num)) / 2;
+		const lNewMarginLeft_num = lMarginLeftForMovingGameScreenToLeft_num + lCentringOffsetForMarginLeft_num;
 
 		const lMarginTopForMovingGameScreenToTop_num = (-(lGameScreenBounds_obj.h - (lGameScreenBounds_obj.h * lScaleCommon_num)) / 2);
 		const lCentringOffsetForMarginTop_num = (lBrowserScreenBounds_obj.h - (lGameScreenBounds_obj.h * lScaleCommon_num)) / 2;
